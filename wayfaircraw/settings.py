@@ -12,4 +12,5 @@ BOT_VERSION = '1.0'
 SPIDER_MODULES = ['wayfaircraw.spiders']
 NEWSPIDER_MODULE = 'wayfaircraw.spiders'
 USER_AGENT = '%s/%s' % (BOT_NAME, BOT_VERSION)
-
+DOWNLOAD_DELAY = 5
+RANDOMIZE_DOWNLOAD_DELAY = True
