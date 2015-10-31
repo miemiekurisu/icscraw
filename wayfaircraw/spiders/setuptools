@@ -1,0 +1,692 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+  <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+    <head>
+      
+      <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+      <title>setuptools 18.4 : Python Package Index</title>
+      <meta content="CPAN PyPI distutils eggs package management"/>
+      <meta content="Easily download, build, install, upgrade, and uninstall Python packages"/>
+       <link rel="alternate" type="application/rss+xml" title="RSS: 40 latest updates" href="https://pypi.python.org/pypi?:action=rss"/>
+       <link rel="alternate" type="application/rss+xml" title="RSS: 40 newest packages" href="https://pypi.python.org/pypi?:action=packages_rss"/>
+       <link rel="stylesheet" media="screen" href="/static/styles/screen-switcher-default.css" type="text/css"/>
+       <link media="screen" href="/static/styles/netscape4.css" type="text/css" rel="stylesheet"/>
+       <link media="print" href="/static/styles/print.css" type="text/css" rel="stylesheet"/>
+       <link media="screen" href="/static/styles/largestyles.css" type="text/css" rel="alternate stylesheet" title="large text"/>
+       <link media="screen" href="/static/styles/defaultfonts.css" type="text/css" rel="alternate stylesheet" title="default fonts"/>
+       <link rel="stylesheet" media="screen" href="/static/css/docutils.css" type="text/css"/>
+       <link rel="stylesheet" media="screen" href="/static/css/pygments.css" type="text/css"/>
+
+       <!-- allow pypi to override the standard pydotorg/docutils/etc. styles -->
+       <link rel="stylesheet" href="/static/css/pypi.css" type="text/css"/>
+       <link media="screen" rel="stylesheet" href="/static/css/pypi-screen.css" type="text/css"/>
+
+       
+       <meta name="google-site-verification" content="NSgF04qslVV4P7nymxJDSkWVK09zfdPTxgZfU3dNSoQ"/>
+       
+
+       
+ <meta name="keywords" content="CPAN PyPI distutils eggs package management"/>
+ <meta name="description" content="Easily download, build, install, upgrade, and uninstall Python packages"/>
+ <link rel="meta" title="DOAP" type="application/rdf+xml" href="/pypi?:action=doap&amp;name=setuptools&amp;version=18.4"/>
+ <style type="text/css">
+  table.form th {white-space: pre;}
+ </style>
+
+
+       <style type="text/css">
+       </style>
+    </head>
+    <body>
+     
+
+      <!--  Logo  -->
+      <h1 id="logoheader">
+       <a accesskey="1" href="http://www.python.org" id="logolink">
+          <img src="/static/images/python-logo.png" alt="homepage" border="0" id="logo"/>
+       </a>
+      </h1>
+      <!--  Skip to Navigation  -->
+      <div class="skiptonav"><a accesskey="2" href="#left-hand-navigation"><img src="/static/images/trans.gif" alt="skip to navigation" border="0" id="skiptonav"/></a></div>
+      <div class="skiptonav"><a accesskey="3" href="#content-body"><img src="/static/images/trans.gif" alt="skip to content" border="0" id="skiptocontent"/></a></div>
+      <!--  Utility Menu  -->
+
+      <div id="utility-menu">
+        <!--  Search Box  -->
+        <div id="searchbox">
+          <form id="searchform" method="get" name="searchform" action="/pypi">
+            <input type="hidden" name=":action" value="search"/>
+            <div id="search">
+              <input class="input-text" id="term" name="term" autofocus="autofocus"/>
+              <input class="input-button" type="submit" name="submit" value="search" id="submit"/>
+            </div>
+          </form>
+        </div>
+<!-- XXX: reinstate this       <div id="screen-switcher"></div> -->
+      </div>
+      <div id="left-hand-navigation">
+
+        <!--  Main Menu NEED LEVEL TWO HEADER AND FOOTER -->
+        <div id="menu">
+          <ul class="level-one">
+            <li class="selected">
+              <a class="selected" href="/pypi">Package Index</a>
+
+              <ul class="level-two">
+
+                
+                  <li class=""><a class="" href="/pypi?%3Aaction=browse">Browse&nbsp;packages</a></li>
+                
+                
+                  <li class=""><a class="" href="/pypi?%3Aaction=submit_form">Package&nbsp;submission</a></li>
+                
+                
+                  <li class=""><a class="" href="/pypi?%3Aaction=list_classifiers">List&nbsp;trove&nbsp;classifiers</a></li>
+                
+                
+                  <li class=""><a class="" href="/pypi?%3Aaction=index">List&nbsp;packages</a></li>
+                
+                
+                  <li class=""><a class="" href="/pypi?%3Aaction=rss">RSS&nbsp;(latest&nbsp;40&nbsp;updates)</a></li>
+                
+                
+                  <li class=""><a class="" href="/pypi?%3Aaction=packages_rss">RSS&nbsp;(newest&nbsp;40&nbsp;packages)</a></li>
+                
+		<li><a href="/pypi?:action=browse&amp;c=533&amp;show=all">Python 3 Packages</a></li>
+        <li><a href="http://wiki.python.org/moin/CheeseShopTutorial">PyPI Tutorial</a></li>
+        <li><a href="/security">PyPI Security</a></li>
+        <li><a href="http://sourceforge.net/tracker/?group_id=66150&amp;atid=513504">PyPI Support</a></li>
+        <li><a href="https://bitbucket.org/pypa/pypi/issues">PyPI Bug Reports</a></li>
+        <li><a href="http://www.python.org/sigs/distutils-sig/">PyPI Discussion</a></li>
+        <li><a href="http://wiki.python.org/moin/CheeseShopDev">PyPI Developer Info</a></li>
+       </ul>
+
+            </li>
+
+
+
+
+            <li class=""><a href="http://www.python.org/about" class="" title="About The Python Language">About</a>
+            </li><li class=""><a href="http://www.python.org/news" class="" title="">News</a>
+            </li><li class=""><a href="http://www.python.org/doc" class="" title="">Documentation</a>
+            </li><li class=""><a href="http://www.python.org/download" title="">Download</a>
+
+
+            </li><li class=""><a href="http://www.python.org/community" class="" title="">Community</a>
+            </li><li class=""><a href="http://www.python.org/psf" class="" title="Python Software Foundation">Foundation</a>
+            </li><li class=""><a href="http://www.python.org/dev" class="" title="Python Core Language Development">Core Development</a>
+          </li>
+          </ul>
+        </div>
+
+      </div>
+      <div id="content-body">
+        <div id="body-main">
+          <div id="content">
+
+            <div id="breadcrumb">
+              <a href="/pypi">Package Index</a>
+              
+                <span class="breadcrumb-separator">&gt;</span>
+                <a href="/pypi/setuptools">setuptools</a>
+              
+              
+                <span class="breadcrumb-separator">&gt;</span>
+                <a href="/pypi/setuptools/18.4">18.4</a>
+              
+
+            </div>
+
+            <div id="document-floating">
+
+            <div id="document-navigation" style="overflow-y: auto; max-height: 15em; overflow-x: hidden;">
+		
+                  <h4>Not Logged In</h4>
+
+                  <ul>
+		    
+                    <li><a href="/pypi?%3Aaction=login">Login</a></li>
+                    <li><a href="/pypi?%3Aaction=register_form">Register</a></li>
+                    <li><a href="/pypi?%3Aaction=forgotten_password_form">Lost Login?</a></li>
+		    <li>Use <a href="/pypi?:action=openid">OpenID</a>
+                      
+                        <a style="border: none;" href="/pypi?:action=login&amp;provider=Google"><img width="16" height="16" alt="Google" src="https://www.google.com/favicon.ico" title="Google"/></a>
+                      
+                      
+                        <a style="border: none;" href="/pypi?:action=login&amp;provider=Launchpad"><img width="16" height="16" alt="Launchpad" src="https://launchpad.net/@@/launchpad.png" title="Launchpad"/></a>
+                      
+                    </li>
+                  </ul>
+
+		
+
+		
+
+                <div id="statusdiv">
+                </div>
+            </div>
+        </div>
+        
+
+
+            <div class="section">
+              <h1>setuptools 18.4</h1>
+
+              
+<div id="download-button">
+ 
+ <a class="button green" style="float:right;" href="#downloads">Downloads &darr;</a>
+</div>
+
+<p style="font-style: italic">Easily download, build, install, upgrade, and uninstall Python packages</p>
+
+<p>
+   <a href="http://pythonhosted.org/setuptools/">Package Documentation</a>
+</p>
+
+
+
+
+
+
+<div id="table-of-contents">
+<p><strong>Table of Contents</strong></p>
+<ul>
+<li><a href="#installation-instructions" id="id1" rel="nofollow">Installation Instructions</a><ul>
+<li><a href="#windows-powershell-3-or-later" id="id2" rel="nofollow">Windows (Powershell 3 or later)</a></li>
+<li><a href="#windows-simplified" id="id3" rel="nofollow">Windows (simplified)</a></li>
+<li><a href="#unix-wget" id="id4" rel="nofollow">Unix (wget)</a></li>
+<li><a href="#unix-including-mac-os-x-curl" id="id5" rel="nofollow">Unix including Mac OS X (curl)</a></li>
+<li><a href="#advanced-installation" id="id6" rel="nofollow">Advanced Installation</a></li>
+<li><a href="#downloads" id="id7" rel="nofollow">Downloads</a></li>
+<li><a href="#uninstalling" id="id8" rel="nofollow">Uninstalling</a></li>
+</ul>
+</li>
+<li><a href="#using-setuptools-and-easyinstall" id="id9" rel="nofollow">Using Setuptools and EasyInstall</a></li>
+<li><a href="#credits" id="id10" rel="nofollow">Credits</a></li>
+<li><a href="#code-of-conduct" id="id11" rel="nofollow">Code of Conduct</a></li>
+</ul>
+</div>
+<p><a href="https://pythonhosted.org/setuptools/history.html" rel="nofollow">Change History</a>.</p>
+<div id="installation-instructions">
+<h2><a href="#id1" rel="nofollow">Installation Instructions</a></h2>
+<p>The recommended way to bootstrap setuptools on any system is to download
+<a href="https://bootstrap.pypa.io/ez_setup.py" rel="nofollow">ez_setup.py</a> and run it using the target Python environment. Different
+operating systems have different recommended techniques to accomplish this
+basic routine, so below are some examples to get you started.</p>
+<p>Setuptools requires Python 2.6 or later. To install setuptools
+on Python 2.4 or Python 2.5, use the <a href="https://bitbucket.org/pypa/setuptools/raw/bootstrap-py24/ez_setup.py" rel="nofollow">bootstrap script for Setuptools 1.x</a>.</p>
+<p>The link provided to ez_setup.py is a bookmark to bootstrap script for the
+latest known stable release.</p>
+<div id="windows-powershell-3-or-later">
+<h3><a href="#id2" rel="nofollow">Windows (Powershell 3 or later)</a></h3>
+<p>For best results, uninstall previous versions FIRST (see <a href="#uninstalling" rel="nofollow">Uninstalling</a>).</p>
+<p>Using Windows 8 (which includes PowerShell 3) or earlier versions of Windows
+with PowerShell 3 installed, it’s possible to install with one simple
+Powershell command. Start up Powershell and paste this command:</p>
+<pre>&gt; (Invoke-WebRequest https://bootstrap.pypa.io/ez_setup.py).Content | python -
+</pre>
+<p>You must start the Powershell with Administrative privileges or you may choose
+to install a user-local installation:</p>
+<pre>&gt; (Invoke-WebRequest https://bootstrap.pypa.io/ez_setup.py).Content | python - --user
+</pre>
+<p>If you have Python 3.3 or later, you can use the <tt>py</tt> command to install to
+different Python versions. For example, to install to Python 3.3 if you have
+Python 2.7 installed:</p>
+<pre>&gt; (Invoke-WebRequest https://bootstrap.pypa.io/ez_setup.py).Content | py -3 -
+</pre>
+<p>The recommended way to install setuptools on Windows is to download
+<a href="https://bootstrap.pypa.io/ez_setup.py" rel="nofollow">ez_setup.py</a> and run it. The script will download the appropriate
+distribution file and install it for you.</p>
+<p>Once installation is complete, you will find an <tt>easy_install</tt> program in
+your Python <tt>Scripts</tt> subdirectory.  For simple invocation and best results,
+add this directory to your <tt>PATH</tt> environment variable, if it is not already
+present. If you did a user-local install, the <tt>Scripts</tt> subdirectory is
+<tt>$env:APPDATA\Python\Scripts</tt>.</p>
+</div>
+<div id="windows-simplified">
+<h3><a href="#id3" rel="nofollow">Windows (simplified)</a></h3>
+<p>For Windows without PowerShell 3 or for installation without a command-line,
+download <a href="https://bootstrap.pypa.io/ez_setup.py" rel="nofollow">ez_setup.py</a> using your preferred web browser or other technique
+and “run” that file.</p>
+</div>
+<div id="unix-wget">
+<h3><a href="#id4" rel="nofollow">Unix (wget)</a></h3>
+<p>Most Linux distributions come with wget.</p>
+<p>Download <a href="https://bootstrap.pypa.io/ez_setup.py" rel="nofollow">ez_setup.py</a> and run it using the target Python version. The script
+will download the appropriate version and install it for you:</p>
+<pre>&gt; wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+</pre>
+<p>Note that you will may need to invoke the command with superuser privileges to
+install to the system Python:</p>
+<pre>&gt; wget https://bootstrap.pypa.io/ez_setup.py -O - | sudo python
+</pre>
+<p>Alternatively, Setuptools may be installed to a user-local path:</p>
+<pre>&gt; wget https://bootstrap.pypa.io/ez_setup.py -O - | python - --user
+</pre>
+<p>Note that on some older systems (noted on Debian 6 and CentOS 5 installations),
+<cite>wget</cite> may refuse to download <cite>ez_setup.py</cite>, complaining that the certificate common name <cite>*.c.ssl.fastly.net</cite>
+does not match the host name <cite>bootstrap.pypa.io</cite>. In addition, the <cite>ez_setup.py</cite> script may then encounter similar problems using
+<cite>wget</cite> internally to download <cite>setuptools-x.y.zip</cite>, complaining that the certificate common name of <cite>www.python.org</cite> does not match the
+host name <cite>pypi.python.org</cite>. Those are known issues, related to a bug in the older versions of <cite>wget</cite>
+(see <a href="https://bitbucket.org/pypa/pypi/issue/59#comment-5881915" rel="nofollow">Issue 59</a>). If you happen to encounter them,
+install Setuptools as follows:</p>
+<pre>&gt; wget --no-check-certificate https://bootstrap.pypa.io/ez_setup.py
+&gt; python ez_setup.py --insecure
+</pre>
+</div>
+<div id="unix-including-mac-os-x-curl">
+<h3><a href="#id5" rel="nofollow">Unix including Mac OS X (curl)</a></h3>
+<p>If your system has curl installed, follow the <tt>wget</tt> instructions but
+replace <tt>wget</tt> with <tt>curl</tt> and <tt><span class="pre">-O</span></tt> with <tt><span class="pre">-o</span></tt>. For example:</p>
+<pre>&gt; curl https://bootstrap.pypa.io/ez_setup.py -o - | python
+</pre>
+</div>
+<div id="advanced-installation">
+<h3><a href="#id6" rel="nofollow">Advanced Installation</a></h3>
+<p>For more advanced installation options, such as installing to custom
+locations or prefixes, download and extract the source
+tarball from <a href="https://pypi.python.org/pypi/setuptools" rel="nofollow">Setuptools on PyPI</a>
+and run setup.py with any supported distutils and Setuptools options.
+For example:</p>
+<pre>setuptools-x.x$ python setup.py install --prefix=/opt/setuptools
+</pre>
+<p>Use <tt><span class="pre">--help</span></tt> to get a full options list, but we recommend consulting
+the <a href="https://pythonhosted.org/setuptools/EasyInstall" rel="nofollow">EasyInstall manual</a> for detailed instructions, especially <a href="https://pythonhosted.org/setuptools/EasyInstall#custom-installation-locations" rel="nofollow">the section
+on custom installation locations</a>.</p>
+</div>
+<div id="downloads">
+<h3><a href="#id7" rel="nofollow">Downloads</a></h3>
+<p>All setuptools downloads can be found at <a href="https://pypi.python.org/pypi/setuptools" rel="nofollow">the project’s home page in the Python
+Package Index</a>.  Scroll to the very bottom of the page to find the links.</p>
+<p>In addition to the PyPI downloads, the development version of <tt>setuptools</tt>
+is available from the <a href="https://bitbucket.org/pypa/setuptools/get/default.tar.gz#egg=setuptools-dev" rel="nofollow">Bitbucket repo</a>, and in-development versions of the
+<a href="http://svn.python.org/projects/sandbox/branches/setuptools-0.6/#egg=setuptools-dev06" rel="nofollow">0.6 branch</a> are available as well.</p>
+</div>
+<div id="uninstalling">
+<h3><a href="#id8" rel="nofollow">Uninstalling</a></h3>
+<p>On Windows, if Setuptools was installed using an <tt>.exe</tt> or <tt>.msi</tt>
+installer, simply use the uninstall feature of “Add/Remove Programs” in the
+Control Panel.</p>
+<p>Otherwise, to uninstall Setuptools or Distribute, regardless of the Python
+version, delete all <tt>setuptools*</tt> and <tt>distribute*</tt> files and
+directories from your system’s <tt><span class="pre">site-packages</span></tt> directory
+(and any other <tt>sys.path</tt> directories) FIRST.</p>
+<p>If you are upgrading or otherwise plan to re-install Setuptools or Distribute,
+nothing further needs to be done. If you want to completely remove Setuptools,
+you may also want to remove the ‘easy_install’ and ‘easy_install-x.x’ scripts
+and associated executables installed to the Python scripts directory.</p>
+</div>
+</div>
+<div id="using-setuptools-and-easyinstall">
+<h2><a href="#id9" rel="nofollow">Using Setuptools and EasyInstall</a></h2>
+<p>Here are some of the available manuals, tutorials, and other resources for
+learning about Setuptools, Python Eggs, and EasyInstall:</p>
+<ul>
+<li><a href="https://pythonhosted.org/setuptools/easy_install.html" rel="nofollow">The EasyInstall user’s guide and reference manual</a></li>
+<li><a href="https://pythonhosted.org/setuptools/setuptools.html" rel="nofollow">The setuptools Developer’s Guide</a></li>
+<li><a href="https://pythonhosted.org/setuptools/pkg_resources.html" rel="nofollow">The pkg_resources API reference</a></li>
+<li><a href="https://pythonhosted.org/setuptools/formats.html" rel="nofollow">The Internal Structure of Python Eggs</a></li>
+</ul>
+<p>Questions, comments, and bug reports should be directed to the <a href="http://mail.python.org/pipermail/distutils-sig/" rel="nofollow">distutils-sig
+mailing list</a>.  If you have written (or know of) any tutorials, documentation,
+plug-ins, or other resources for setuptools users, please let us know about
+them there, so this reference list can be updated.  If you have working,
+<em>tested</em> patches to correct problems or add features, you may submit them to
+the <a href="https://bitbucket.org/pypa/setuptools/issues" rel="nofollow">setuptools bug tracker</a>.</p>
+</div>
+<div id="credits">
+<h2><a href="#id10" rel="nofollow">Credits</a></h2>
+<ul>
+<li>The original design for the <tt>.egg</tt> format and the <tt>pkg_resources</tt> API was
+co-created by Phillip Eby and Bob Ippolito.  Bob also implemented the first
+version of <tt>pkg_resources</tt>, and supplied the OS X operating system version
+compatibility algorithm.</li>
+<li>Ian Bicking implemented many early “creature comfort” features of
+easy_install, including support for downloading via Sourceforge and
+Subversion repositories.  Ian’s comments on the Web-SIG about WSGI
+application deployment also inspired the concept of “entry points” in eggs,
+and he has given talks at PyCon and elsewhere to inform and educate the
+community about eggs and setuptools.</li>
+<li>Jim Fulton contributed time and effort to build automated tests of various
+aspects of <tt>easy_install</tt>, and supplied the doctests for the command-line
+<tt>.exe</tt> wrappers on Windows.</li>
+<li>Phillip J. Eby is the seminal author of setuptools, and
+first proposed the idea of an importable binary distribution format for
+Python application plug-ins.</li>
+<li>Significant parts of the implementation of setuptools were funded by the Open
+Source Applications Foundation, to provide a plug-in infrastructure for the
+Chandler PIM application.  In addition, many OSAF staffers (such as Mike
+“Code Bear” Taylor) contributed their time and stress as guinea pigs for the
+use of eggs and setuptools, even before eggs were “cool”.  (Thanks, guys!)</li>
+<li>Tarek Ziadé is the principal author of the Distribute fork, which
+re-invigorated the community on the project, encouraged renewed innovation,
+and addressed many defects.</li>
+<li>Since the merge with Distribute, Jason R. Coombs is the
+maintainer of setuptools.  The project is maintained in coordination with
+the Python Packaging Authority (PyPA) and the larger Python community.</li>
+</ul>
+</div>
+<div id="code-of-conduct">
+<span id="files"></span><h2><a href="#id11" rel="nofollow">Code of Conduct</a></h2>
+<p>Everyone interacting in the setuptools project’s codebases, issue trackers,
+chat rooms, and mailing lists is expected to follow the
+<a href="https://www.pypa.io/en/latest/code-of-conduct/" rel="nofollow">PyPA Code of Conduct</a>.</p>
+</div>
+
+
+<a name="downloads">&nbsp;</a>
+<table class="list" style="margin-bottom: 10px;">
+<tr>
+  <th>File</th>
+  <th>Type</th>
+  <th>Py Version</th>
+  <th>Uploaded on</th>
+  <th style="text-align: right;">Size</th>
+</tr>
+
+<tr class="odd">
+
+    <td>
+    <span style="white-space: nowrap;">
+      <a href="https://pypi.python.org/packages/3.5/s/setuptools/setuptools-18.4-py2.py3-none-any.whl#md5=7fcc3027ef72df6be665c271d3c457b2">setuptools-18.4-py2.py3-none-any.whl</a>
+      (<a title="MD5 Digest" href="/pypi?:action=show_md5&amp;digest=7fcc3027ef72df6be665c271d3c457b2">md5</a>)
+    </span>
+    
+        </td>
+  <td style="white-space: nowrap;">
+    Python Wheel
+  </td>
+  <td>
+    3.5
+  </td>
+  <td>2015-10-11</td>
+  <td style="text-align: right;">451KB</td>
+
+</tr>
+<tr class="even">
+
+    <td>
+    <span style="white-space: nowrap;">
+      <a href="https://pypi.python.org/packages/source/s/setuptools/setuptools-18.4.tar.gz#md5=214c6c43bd7035e870c1beab402c48e7">setuptools-18.4.tar.gz</a>
+      (<a title="MD5 Digest" href="/pypi?:action=show_md5&amp;digest=214c6c43bd7035e870c1beab402c48e7">md5</a>)
+    </span>
+    
+        </td>
+  <td style="white-space: nowrap;">
+    Source
+  </td>
+  <td>
+    
+  </td>
+  <td>2015-10-11</td>
+  <td style="text-align: right;">611KB</td>
+
+</tr>
+<tr class="odd">
+
+    <td>
+    <span style="white-space: nowrap;">
+      <a href="https://pypi.python.org/packages/source/s/setuptools/setuptools-18.4.zip#md5=38d5cd321ca9de2cdb1dafcac4cb7007">setuptools-18.4.zip</a>
+      (<a title="MD5 Digest" href="/pypi?:action=show_md5&amp;digest=38d5cd321ca9de2cdb1dafcac4cb7007">md5</a>)
+    </span>
+    
+        </td>
+  <td style="white-space: nowrap;">
+    Source
+  </td>
+  <td>
+    
+  </td>
+  <td>2015-10-11</td>
+  <td style="text-align: right;">654KB</td>
+
+</tr>
+
+<tr><td id="last" colspan="6"/></tr>
+  </table>
+
+<ul class="nodot">
+  <li><strong>Downloads (All Versions):</strong></li>
+  <li>
+    <span>65321</span> downloads in the last day
+  </li>
+  <li>
+    <span>865800</span> downloads in the last week
+  </li>
+  <li>
+    <span>4386712</span> downloads in the last month
+  </li>
+</ul>
+
+
+
+<ul class="nodot">
+ <li>
+  <strong>Author:</strong>
+  <span>Python Packaging Authority</span>
+ </li>
+
+ 
+
+ <li>
+  <strong>Documentation:</strong>
+  <a href="http://pythonhosted.org/setuptools/">setuptools package documentation</a>
+ </li>
+
+<!-- The <th> elements below are a terrible terrible hack for setuptools -->
+ <li>
+  <strong>Home Page:</strong>
+  <!-- <th>Home Page -->
+  <a href="https://bitbucket.org/pypa/setuptools">https://bitbucket.org/pypa/setuptools</a>
+ </li>
+
+
+ 
+
+ 
+
+
+ <li>
+  <strong>Keywords:</strong>
+  <span>CPAN PyPI distutils eggs package management</span>
+ </li>
+
+ <li>
+  <strong>License:</strong>
+  
+  
+  <span>PSF or ZPL</span>
+  
+ </li>
+
+ 
+
+<!-- TODO: add link to products in follow dependencies... -->
+ 
+ 
+ 
+
+ <li>
+  <strong>Categories</strong>
+  <ul class="nodot">
+   <li>
+    <a href="/pypi?:action=browse&amp;c=5">Development Status :: 5 - Production/Stable</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=30">Intended Audience :: Developers</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=78">License :: OSI Approved :: Python Software Foundation License</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=89">License :: OSI Approved :: Zope Public License</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=156">Operating System :: OS Independent</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=531">Programming Language :: Python :: 2.6</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=532">Programming Language :: Python :: 2.7</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=533">Programming Language :: Python :: 3</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=535">Programming Language :: Python :: 3.1</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=538">Programming Language :: Python :: 3.2</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=566">Programming Language :: Python :: 3.3</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=587">Programming Language :: Python :: 3.4</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=607">Programming Language :: Python :: 3.5</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=423">Topic :: Software Development :: Libraries :: Python Modules</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=444">Topic :: System :: Archiving :: Packaging</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=474">Topic :: System :: Systems Administration</a>
+   </li>
+   <li>
+    <a href="/pypi?:action=browse&amp;c=501">Topic :: Utilities</a>
+   </li>
+  </ul>
+ </li>
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+ <li>
+  <strong>Package Index Owner:</strong>
+  <span>jaraco, pje</span>
+ </li>
+
+ <li>
+  <strong>Package Index Maintainer:</strong>
+  <span>Ivoz, jezdez, dstufft, jaraco, ianb</span>
+ </li>
+
+ <li>
+  <strong><a href="http://usefulinc.com/doap">DOAP</a> record:</strong>
+  <a href="/pypi?:action=doap&amp;name=setuptools&amp;version=18.4">setuptools-18.4.xml</a>
+ </li>
+
+</ul>
+
+
+
+
+
+            </div>
+
+
+          </div>
+          <div id="footer"><div id="credits">
+            <a href="http://www.python.org/about/website">Website maintained by the Python community</a><br/>
+            <a href="https://www.fastly.com/" title="Real-time CDN services provided by Fastly">Real-time CDN by Fastly</a> /
+            <a href="http://developer.rackspace.com/" title="Server hosting by Rackspace Open Source support">hosting by Rackspace</a> /
+            <a href="http://www.timparkin.co.uk/" title="Design by Tim Parkin, Yorkshire man, photographer and developer">design by Tim Parkin</a>
+          </div>
+          Copyright © 1990-2015, <a href="http://www.python.org/psf">Python Software Foundation</a><br/>
+          <a href="http://www.python.org/about/legal">Legal Statements</a>
+
+          </div>
+        </div>
+      </div>
+
+      
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-55961911-1', 'auto');
+        ga('require', 'linkid', 'linkid.js');
+        ga('send', 'pageview');
+      </script>
+      
+
+      <script type="text/javascript" src="//statuspage-production.s3.amazonaws.com/se-v2.js">
+      </script>
+      <script type="text/javascript">
+        var sp = new StatusPage.page({ page : '2p66nmmycsj3' });
+        sp.summary({
+          // <![CDATA[
+          success: function(data) {
+            var div = document.getElementById('statusdiv');
+            var reports = "</br><h4 id='statusbox'>Status</h4>\n";
+            var outage = 0;
+            var maintenance = 0;
+            for (i in data.incidents) {
+              var incident = data.incidents[i];
+              var message, status = incident.status;
+              if (status === 'scheduled') {
+                message = '<li><a href="' + incident.shortlink + '">' + incident.name + ' scheduled.</a></li>\n';
+                reports += message;
+                maintenance += 1;
+              } else if (status === 'in_progress') {
+                message = '<li><a href="' + incident.shortlink + '">' + incident.name + ' is currently in progress.' + '</a></li>\n';
+                reports += message;
+                maintenance += 1;
+              } else if (status !== 'resolved' && status !== 'postmortem' && status !== 'completed') {
+                message = '<li><a href="' + incident.shortlink + '">' + incident.name + ': ' + incident.status + '</a></li>\n';
+                reports += message;
+                outage += 1;
+              }
+            }
+            for (i in data.scheduled_maintenances) {
+              var incident = data.scheduled_maintenances[i];
+              var message, status = incident.status;
+              if (status === 'scheduled') {
+                message = '<li><a href="' + incident.shortlink + '">' + incident.name + ' scheduled.</a></li>\n';
+                reports += message;
+                maintenance += 1;
+              } else if (status === 'in_progress') {
+                message = '<li><a href="' + incident.shortlink + '">' + incident.name + ' is currently in progress.' + '</a></li>\n';
+                reports += message;
+                maintenance += 1;
+              } else if (status !== 'resolved' && status !== 'postmortem' && status !== 'completed') {
+                message = '<li><a href="' + incident.shortlink + '">' + incident.name + ': ' + incident.status + '</a></li>\n';
+                reports += message;
+                outage += 1;
+              }
+            }
+            if (outage + maintenance === 0) {
+              reports += "<li><a href='http://status.python.org'>Nothing to report</a></li>";
+            }
+            div.innerHTML=reports;
+            if (outage > 0) {
+              var statusbox = document.getElementById("statusbox");
+              statusbox.style.background = '#FC234A';
+            }
+          }
+          // ]]>
+        });
+      </script>
+
+    </body>
+  </html>
+
