@@ -8,7 +8,8 @@ class wayfairSpider(scrapy.Spider):
 
     def parse(self,response):
         print 'LV1'
-        for lo in response.xpath("//*[@id='cms_lego_39325']/div[2]/span/a"):
+        
+        for lo in response.css('.full_grid_wrap').xpath('div[1]/div[1]//*[@data-click-track="category_left_nav_overall_click"]/span/a').extract():
             item  = WayfaircrawItem()
             item['lvone_name'] = lo.xpath('text()').extract()[0].replace('\n','').strip()
             item['lvone_url'] = lo.xpath('@href').extract()[0]

@@ -8,11 +8,8 @@ from scrapy.item import Item, Field
 class WayfaircrawItem(Item):
     # define the fields for your item here like:
     # name = Field()
-    lvone_name = Field()
-    lvone_url = Field()
-    lvtwo_name = Field()
-    lvtwo_url = Field()
-    lvthree_names = Field()
+    path_name = Field()
+    path_url = Field()
     prod_url = Field()
     imgs = Field()
     title_name = Field()
@@ -23,4 +20,6 @@ class WayfaircrawItem(Item):
     product_last_section = Field()
     spec_dimentions = Field()
     spec_table= Field()
+    breadcrumb = Field()
+    product_nova_breadcrumbs = Field()
     pass
