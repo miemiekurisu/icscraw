@@ -25,6 +25,13 @@ class WayfaircrawItem(Item):
     pass
 
 class ArchItem(Item):
-    path_name_url=Field() #Sofas and Armchairs : http://www.archiproducts.com/en/b779/sofas-and-armchairs.html
+    path_name=Field() #Sofas and Armchairs : http://www.archiproducts.com/en/b779/sofas-and-armchairs.html
+    path_url=Field()
     main_bread=Field()
-    
+    product_name = Field() #nomeInPage
+    pre_title = Field()
+    manufacturer_name=Field() 
+    designer = Field() #designerInPage
+    designer_description = Field()
+    description = Field() #description
+    tags = Field()

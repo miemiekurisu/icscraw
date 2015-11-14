@@ -1,51 +1,64 @@
 import scrapy
-from wayfaircraw.items import WayfaircrawItem
+from wayfaircraw.items import ArchItem
+from scrapy.utils.response import get_base_url
+import scrapy.utils.url as surl
 
-class wayfairSpider(scrapy.Spider):
-    name = "wayfair"
-    allowed_domains = ["wayfair.com"]
-    start_urls = ["http://www.wayfair.com/Furniture-C45974.html"]
+class archSpider(scrapy.Spider):
+    name = "arch"
+    allowed_domains = ["archiproducts.com"]
+    start_urls = ["http://www.archiproducts.com/en/b1390/furniture.html"]
 
     def parse(self,response):
-        print 'LV1'
-        #if have , go next 
-        #if not have , go extract product info
-        for lo in response.css('.full_grid_wrap').xpath('div[1]/div[1]//*[@data-click-track="category_left_nav_overall_click"]/span/a').extract():
-            item  = WayfaircrawItem()
-            item['lvone_name'] = lo.xpath('text()').extract()[0].replace('\n','').strip()
-            item['lvone_url'] = lo.xpath('@href').extract()[0]
-            print item['lvone_name']
-            yield scrapy.Request(item['lvone_url'],meta={'item':item},callback= self.parse_two)
-    
-    def parse_two(self,response):
-        print 'LV2'
-        for lt in response.xpath("//*[@id='cms_lego_40656']/div[2]/span/a"):
-            itemtwo = response.meta['item']
-            itemtwo['lvtwo_name'] = lt.xpath('text()').extract()[0].replace('\n','').strip() 
-            itemtwo['lvtwo_url'] = lt.xpath('@href').extract()[0] 
-            print itemtwo['lvtwo_name']
-            yield scrapy.Request(itemtwo['lvtwo_url'],meta={'item':itemtwo},callback=self.parse_three)
-    
-    def parse_three(self,response):
-        print 'LV3'
-        #parse_lvthree
-        for lt in response.css('.productbox').xpath('@href').extract():
-            itemthree = response.meta['item']
-            itemthree['prod_url']=lt
-            yield scrapy.Request(lt,meta={'item':itemthree},callback=self.parse_content)
-	nextpage = response.css(".js-next-page").xpath('@href').extract()
-        print 'nextpage=%s'%nextpage
-        if(len(nextpage)>0):
-            yield scrapy.Request(nextpage[0],meta={'item':response.meta['item']},callback=self.parse_three)
-    
+        urlstr = "%s://%s%s"
+        print 'start'
+	parsedurl = surl.parse_url(get_base_url(response))
+	#col-categories-selected
+	for catsel in response.css('.col-categories-selected'):
+		item = ArchItem()
+		pathurl = []
+		pathurl.append(urlstr%(parsedurl.scheme,parsedurl.netloc,catsel.xpath('a/@href').extract()[0]))
+		item['path_url'] = pathurl
+		item['path_name'] = catsel.xpath('a/span/text()').extract()
+		item['main_bread'] = catsel.xpath('//*[@itemprop="title"]/text()').extract()
+		print "!!!!!!!!!!!!!",item['path_url']
+		yield scrapy.Request(item['path_url'][-1],meta={'item':item},callback=self.pg2parse)
+
+   
+    def pg2parse(self,response):
+        print 'pg2parse'
+	parsedurl = surl.parse_url(get_base_url(response))
+        urlstr = "%s://%s%s"
+	for subcat in response.css('.cont-sub-content'):
+		item =  response.meta['item']
+		realurl = urlstr%(parsedurl.scheme,parsedurl.netloc,subcat.xpath('a/@href').extract()[0])
+		item['path_url'].append(realurl)
+		item['path_name'].append(subcat.xpath('a/*/h2[@itemprop="name"]/text()').extract()[0])
+		item['main_bread'].append(response.xpath('//*[@itemprop="title"]/text()').extract())
+                print '=======pathurl',item['path_url'][-1]
+                print len(response.css('.search-result'))
+                yield scrapy.Request(item['path_url'][-1],meta={'item':item},callback=self.parse_prod_list)
+               # else:
+               #     yield scrapy.Request(item['path_url'][-1],meta={'item':item},callback=self.pg2parse)
+
+    def parse_prod_list(self,response):
+        print 'parse_prod_list'
+        urlstr = "%s://%s%s"
+        parsedurl = surl.parse_url(get_base_url(response))
+        for grid in response.css('.clearfix .grid_link'):
+            item =  response.meta['item']
+            prdlnk = grid.xpath('a/@href').extract()
+            realurl = urlstr%(parsedurl.scheme,parsedurl.netloc,prdlnk)
+            item['path_url'].append(realurl)
+            item['path_name'].append(grid.css('.name-product').xpath('text()').extract())
+            item['main_bread'].append(response.xpath('//*[@itemprop="title"]/text()').extract())
+            yield scrapy.Request(item['path_url'][-1],meta={'item':item},callback=self.parse_content)
+            #return item
+        nxtpg = response.css('.btn-pag-right').xpath('@href').extract()
+        if len(nxtpg)>0:
+            nextpage = urlstr%(parsedurl.scheme,parsedurl.netloc,nxtpg[0])
+            yield scrapy.Request(nextpage,meta={'item':response.meta['item']},callback=self.parse_prod_list)
+
     def parse_content(self,response):
-        ci = response.meta['item']
-        ci['imgs']=response.css('.js-photoswipe-item').xpath('a/@data-original-src').extract()
-        ci['title_name']=response.css('.title_name').xpath('text()').extract()[0].replace('\n','').strip()
-        ci['manu_name']=response.css('.manu_name').xpath('text()').extract()[0].replace('\n','').strip()
-        #ci['product_info']
-        ci['product_section_description']=[i.replace('\n','').strip() for i in response.css('.product_section_description').xpath('text()').extract()]
-        ci['product_sub_section']=[i.replace('\n','').strip() for i in response.css('.product_sub_section').xpath('ul/li/text()').extract()]
-        ci['spec_dimentions']= [i.replace('\n','').strip() for i in response.css('.spec_dimensions').xpath('p/text()|ul/li/text()').extract()]
-        ci['spec_table']= [i.replace('\n','').strip() for i in response.css('.spec_table').xpath('tr/td/strong/text() | tr/td/text()').extract()]
-        return ci
+        urlstr = "%s://%s%s"
+        print 'parse_content'
+        return   response.meta['item']
