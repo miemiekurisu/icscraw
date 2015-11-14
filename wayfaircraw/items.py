@@ -23,3 +23,8 @@ class WayfaircrawItem(Item):
     breadcrumb = Field()
     product_nova_breadcrumbs = Field()
     pass
+
+class ArchItem(Item):
+    path_name_url=Field() #Sofas and Armchairs : http://www.archiproducts.com/en/b779/sofas-and-armchairs.html
+    main_bread=Field()
+    
