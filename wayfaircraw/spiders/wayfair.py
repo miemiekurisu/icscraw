@@ -8,7 +8,8 @@ class wayfairSpider(scrapy.Spider):
 
     def parse(self,response):
         print 'LV1'
-        
+        #if have , go next 
+        #if not have , go extract product info
         for lo in response.css('.full_grid_wrap').xpath('div[1]/div[1]//*[@data-click-track="category_left_nav_overall_click"]/span/a').extract():
             item  = WayfaircrawItem()
             item['lvone_name'] = lo.xpath('text()').extract()[0].replace('\n','').strip()
