@@ -15,3 +15,5 @@ USER_AGENT = '%s' % ('Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.6')
 DOWNLOAD_DELAY = 5
 RANDOMIZE_DOWNLOAD_DELAY = True
 COOKIES_ENABLES=False
+ITEM_PIPELINES = {'scrapy.pipelines.images.ImagesPipeline': 1}
+IMAGES_STORE = './imgs'

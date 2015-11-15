@@ -28,6 +28,8 @@ class ArchItem(Item):
     path_name=Field() #Sofas and Armchairs : http://www.archiproducts.com/en/b779/sofas-and-armchairs.html
     path_url=Field()
     main_bread=Field()
+    product_url=Field()
+    product_bread = Field()
     product_name = Field() #nomeInPage
     pre_title = Field()
     manufacturer_name=Field() 
@@ -35,3 +37,6 @@ class ArchItem(Item):
     designer_description = Field()
     description = Field() #description
     tags = Field()
+    image_urls = Field()
+    images = Field()
+    image_name = Field()
