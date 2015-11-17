@@ -80,14 +80,13 @@ class archSpider(scrapy.Spider):
         item['path_name'] .append( response.meta['item']['path_name'])
         item['main_bread'] .append(  response.meta['item']['main_bread'])
         item['product_bread'] = response.xpath('//*[@itemprop="title"]/text()').extract()
-        item['product_name'] = response.css('.nomeInPage').xpath('text()').extract()[0]
-        item['pre_title'] = response.css('.pretitleInPage').xpath('text()').extract()[0]
-        item['manufacturer_name'] = response.css('.brandInPage').xpath('a/text()').extract()[0]
-        item['designer'] = response.css('.designerInPage').xpath('span/a/span[@itemprop="name"]/text()').extract()[0]
-        item['designer_description'] = response.css('.designerDescription').xpath('a/text()').extract()[0]
+        item['product_name'] = response.css('.nomeInPage').xpath('text()').extract()
+        item['pre_title'] = response.css('.pretitleInPage').xpath('text()').extract()
+        item['manufacturer_name'] = response.css('.brandInPage').xpath('a/text()').extract()
+        item['designer'] = response.css('.designerInPage').xpath('span/a/span[@itemprop="name"]/text()').extract()
+        item['designer_description'] = response.css('.designerDescription').xpath('a/text()').extract()
         item['description'] = ''.join(response.css('#ProductGeneralDescription').xpath('text()').extract())
         item['tags'] = response.css('.tags').xpath('a/text()').extract()
         item['image_urls'] = response.css('.productGalleryThumb ').xpath('ul/li/a/@href').extract()
-        item['image_names']
 
         return item 
