@@ -40,3 +40,15 @@ class ArchItem(Item):
     image_urls = Field()
     images = Field()
     image_name = Field()
+
+class houzzItem(Item):
+    path_name=Field()
+    path_url=Field()
+    main_bread=Field()
+    product_url=Field()
+    product_name = Field() #title
+    product_bread = Field()
+    manufacturer_name=Field()
+    product_description=Field()
+    product_spec = Field()
+    
