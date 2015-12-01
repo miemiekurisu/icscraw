@@ -51,4 +51,7 @@ class houzzItem(Item):
     manufacturer_name=Field()
     product_description=Field()
     product_spec = Field()
-    
+    description = Field()
+    image_urls = Field()
+    images = Field()
+    image_name = Field()
