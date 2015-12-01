@@ -28,25 +28,21 @@ class houzzSpider(scrapy.Spider):
                 return ttmap.get(i)
             else:
                 continue
-        return None
+        if len(ttmap.get('d3'))>0:
+            return ttmap.get('d3')
+        else:
+            return ttmap.get('d4')
 
    
     def pg2parse(self,response):
         print 'pg2parse'
         #selected D2 D3 D4 maybe D5
         topic_tree = response.xpath('//*[@id="topicTreeFilter"]/li')
-        ttmap={'d1': topic_tree.css('.D1') ,'d2': topic_tree.css('.D2') ,'d3': topic_tree.css('.D3') ,'d4': topic_tree.css('.D4') ,'d5':topic_tree.css('.D5')}
+        ttmap={'d1': topic_tree.css('.D1') ,'d2': topic_tree.css('.D2') ,'d3': topic_tree.css('.D3') ,'d4': topic_tree.css('.D4') }
         next_step = self.nstage(ttmap=ttmap)
-        #item = houzzItem()
-        #item['path_url']=[]
-        #item['path_name']=[]
-        #item['main_bread']=[]
-        #item['path_url'].extend( response.meta['item']['path_url'])
-        #item['path_name'].extend( response.meta['item']['path_name'])
-        #item['main_bread'].extend(  response.meta['item']['main_bread'])
 
-        if None == next_step:
-            #go to product list page
+        #goto pg2parse again
+        for subcat in next_step:
             item = houzzItem()
             item['path_url']=[]
             item['path_name']=[]
@@ -54,27 +50,29 @@ class houzzSpider(scrapy.Spider):
             item['path_url'].extend( response.meta['item']['path_url'])
             item['path_name'].extend( response.meta['item']['path_name'])
             item['main_bread'].extend(  response.meta['item']['main_bread'])
-            yield scrapy.Request(item['path_url'][-1],meta={'item':item},callback=self.parse_prod_list)
-        else:
-            #goto pg2parse
-            for subcat in next_step:
-                item = houzzItem()
-                item['path_url']=[]
-                item['path_name']=[]
-                item['main_bread']=[]
-                item['path_url'].extend( response.meta['item']['path_url'])
-                item['path_name'].extend( response.meta['item']['path_name'])
-                item['main_bread'].extend(  response.meta['item']['main_bread'])
-		item['path_url'].append(subcat.xpath('a/@href').extract()[0])
-		item['path_name'].append(subcat.xpath('a/span/text()').extract()[0])
-		item['main_bread'].append(response.xpath('//*[@class="breadcrumb-item "]/a/span/text()').extract())
-                print "!!!!!!!!!!!!!==========",item
+	    if len(next_step)>1:
+                item['path_url'].append(subcat.xpath('a/@href').extract()[0])
+	        item['path_name'].append(subcat.xpath('a/span/text()').extract()[0])
+	        item['main_bread'].append(response.xpath('//*[@class="breadcrumb-item "]/a/span/text()').extract())
+
+                print "next step:",item
                 yield scrapy.Request(item['path_url'][-1],meta={'item':item},callback=self.pg2parse)
+            else:
+            #item = houzzItem()
+            #item['path_url']=[]
+            #item['path_name']=[]
+            #item['main_bread']=[]
+            #item['path_url'].extend( response.meta['item']['path_url'])
+            #item['path_name'].extend( response.meta['item']['path_name'])
+            #item['main_bread'].extend(  response.meta['item']['main_bread'])
+                print next_step
+                print 'to_product_list:',item
+                yield scrapy.Request(subcat.xpath('a/@href').extract()[0],meta={'item':item},callback=self.parse_prod_list)
 
     def parse_prod_list(self,response):
         print 'parse_prod_list'
         for grid in response.xpath('//*[@class="ic whiteCard m "]'):
-            item = ArchItem() 
+            item = houzzItem() 
             item['path_url']=[]
             item['path_name']=[]
             item['main_bread']=[]
@@ -82,8 +80,8 @@ class houzzSpider(scrapy.Spider):
             item['path_name'] .append( response.meta['item']['path_name'])
             item['main_bread'] .append(  response.meta['item']['main_bread'])
             prdlnk = grid.xpath('*/a/@href').extract()[0]
-            realurl = urlstr%(parsedurl.scheme,parsedurl.netloc,prdlnk)
-            item['path_url'].append(realurl)
+            #realurl = urlstr%(parsedurl.scheme,parsedurl.netloc,prdlnk)
+            item['path_url'].append(prdlnk)
             item['path_name'].append(grid.xpath('*/a/text()').extract())
             item['main_bread'].append(response.xpath('//*[@class="breadcrumb-item "]/a/span/text()').extract())
             print "=======================PD:",item
@@ -95,6 +93,7 @@ class houzzSpider(scrapy.Spider):
             yield scrapy.Request(nextpage,meta={'item':response.meta['item']},callback=self.parse_prod_list)
 
     def parse_content(self,response):
+        print 'parse_content'
         pageinfo = response.xpath('//*[@id="hzProductInfo"]')
         item  = houzzItem()
         item['path_url']=[]
@@ -106,7 +105,8 @@ class houzzSpider(scrapy.Spider):
         item['product_bread'] = response.xpath('//*[@class="breadcrumb-item "]/a/span/text()').extract()
         item['product_name'] =pageinfo.xpath('*/header/*[@itemprop="name"]/text()').extract()[0]
         item['description'] = ' '.join([i.strip() for i in pageinfo.xpath('//*[@class="description"]/text()').extract()])
-        item['image_urls'] = response.css('.productGalleryThumb ').xpath('ul/li/a/@href').extract()
+        item['image_urls']=response.css('#mainImage').xpath('@src').extract()
+        item['image_urls'].extend(response.css('.productGalleryThumb ').xpath('ul/li/a/@href').extract())
         spec = {}
         keys = []
         values = []
@@ -119,5 +119,5 @@ class houzzSpider(scrapy.Spider):
         for k in range(0,len(keys)):
             spec[keys[k]]=values[k]
         item['product_spec'] = spec
-        print item
+        print "!!!====product info===========!!!",item
         return item 
