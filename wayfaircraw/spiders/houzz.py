@@ -90,7 +90,7 @@ class houzzSpider(scrapy.Spider):
         nxtpg = response.xpath('//*[@class="navigation-button next"]/@href').extract()
         if len(nxtpg)>0:
             nextpage = nxtpg[0]
-            yield scrapy.Request(nextpage,meta={'item':response.meta['item']},callback=self.parse_prod_list)
+            yield scrapy.Request(nextpage,meta={'item':response.meta['item']},callback=self.parse_content)
 
     def parse_content(self,response):
         print 'parse_content'
