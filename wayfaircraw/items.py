@@ -55,3 +55,13 @@ class houzzItem(Item):
     image_urls = Field()
     images = Field()
     image_name = Field()
+
+class firstItem(Item):
+    title = Field()
+    url = Field()
+    description = Field()
+    bread = Field()
+    info= Field()
+    image_urls = Field()
+    images = Field()
+    image_name = Field()

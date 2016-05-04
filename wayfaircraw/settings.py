@@ -7,7 +7,6 @@
 #
 
 BOT_NAME = 'wayfaircraw'
-BOT_VERSION = '1.0'
 
 SPIDER_MODULES = ['wayfaircraw.spiders']
 NEWSPIDER_MODULE = 'wayfaircraw.spiders'
